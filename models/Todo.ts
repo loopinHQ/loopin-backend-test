@@ -16,9 +16,14 @@ export const exampleTodo: (todo?: Partial<Todo>) => Todo = (todo) => ({
 export const exampleTodos: () => Todos = () => {
   return [
     exampleTodo(),
-    exampleTodo({ title: "Learn React", completed: true }),
-    exampleTodo({ title: "Learn Next", completed: false }),
-    exampleTodo({ title: "Learn Tailwind", completed: true }),
-    exampleTodo({ title: "Learn Everything", completed: false }),
+    exampleTodo({ id: 2, title: "Learn React", completed: true }),
+    exampleTodo({ id: 3, title: "Learn Next", completed: false }),
+    exampleTodo({ id: 4, title: "Learn Tailwind", completed: true }),
+    exampleTodo({
+      id: 5,
+      title:
+        "Learn Everything with a really long title that might break designs",
+      completed: false,
+    }),
   ];
 };

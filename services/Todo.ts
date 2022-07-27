@@ -20,7 +20,7 @@ export const updateTodo = async (todo: Todo): Promise<Todo> => {
   return todo;
 };
 
-export const addTodo = async (todo: Todo): Promise<void> => {
+export const addTodo = async (todo: Partial<Todo>): Promise<void> => {
   // TODO Implement a real add service
   return;
 };

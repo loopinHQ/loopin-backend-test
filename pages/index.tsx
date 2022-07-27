@@ -3,7 +3,6 @@ import Head from "next/head";
 import Image from "next/image";
 import useSWR from "swr";
 import TodoList from "../components/TodoList";
-import { Todos } from "../models/Todo";
 
 import { getTodos } from "../services/Todo";
 

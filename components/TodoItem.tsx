@@ -1,14 +1,24 @@
+import { useSWRConfig } from "swr";
 import { Todo } from "../models/Todo";
+import { updateTodo } from "../services/Todo";
 
 interface Props {
   todo: Todo;
 }
 
 const TodoItem: React.FC<Props> = ({ todo }) => {
+  const { mutate } = useSWRConfig();
+
   return (
     <button
       className="cursor-pointer mb-6"
-      onClick={() => console.log("update todo", todo)}
+      onClick={() => {
+        // Update completed to the opposite of the current value
+        updateTodo({ ...todo, completed: !todo.completed });
+
+        // This will refetch all the todos
+        mutate("/todos");
+      }}
     >
       {todo.completed ? <Completed todo={todo} /> : <InProgress todo={todo} />}
     </button>

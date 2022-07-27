@@ -13,11 +13,16 @@ const TodoItem: React.FC<Props> = ({ todo }) => {
     <button
       className="cursor-pointer mb-6"
       onClick={() => {
-        // Update completed to the opposite of the current value
-        updateTodo({ ...todo, completed: !todo.completed });
+        const options = { optimisticData: todo, rollbackOnError: true };
 
-        // This will refetch all the todos
-        mutate("/todos");
+        // Ths will update the todo in the cache
+        // and then also refetch the todos, making the
+        // update feel faster.
+        mutate(
+          "/todos",
+          updateTodo({ ...todo, completed: !todo.completed }),
+          options
+        );
       }}
     >
       {todo.completed ? <Completed todo={todo} /> : <InProgress todo={todo} />}

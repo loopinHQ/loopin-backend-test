@@ -1,4 +1,5 @@
 import { useSWRConfig } from "swr";
+
 import { Todo } from "../models/Todo";
 import { updateTodo } from "../services/Todo";
 
@@ -12,18 +13,9 @@ const TodoItem: React.FC<Props> = ({ todo }) => {
   return (
     <button
       className="cursor-pointer mb-6"
-      onClick={() => {
-        const options = { optimisticData: todo, rollbackOnError: true };
-
-        // Ths will update the todo in the cache
-        // and then also refetch the todos, making the
-        // update feel faster.
-        mutate(
-          "/todos",
-          updateTodo({ ...todo, completed: !todo.completed }),
-          options
-        );
-      }}
+      onClick={() =>
+        mutate("/todos", updateTodo({ ...todo, completed: !todo.completed }))
+      }
     >
       {todo.completed ? <Completed todo={todo} /> : <InProgress todo={todo} />}
     </button>

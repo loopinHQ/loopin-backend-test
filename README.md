@@ -8,14 +8,15 @@ If you have any questions, you can chat to me (Alex Hughes) directly via email o
 
 ## Your Assignment
 
-We've built the frontend for another generic todo app that's going to be the next big thing™; we've styled the components, added interfaces, and set-up all the data-fetching.
+We've built the `/frontend` for another generic todo app that's going to be the next big thing™; we've styled the components, added interfaces, and set-up all the data-fetching.
 
 The only thing is, we don't yet have an API or a database - that's where you come in.
 
 We want you to:
 
-- Create a _new_ API repo using Node.js and TypeScript
-- Modify this repo so that it calls your API successfully
+- Fork this repo
+- Create a _new_ API repo in `/backend` using Node.js and TypeScript
+- Modify the `/frontend` so that it calls your API successfully
 - Add a database (we use PostGres/Prisma but use whatever you are comfortable with)
 
 What we've testing for:
@@ -25,15 +26,20 @@ What we've testing for:
 - Are there sensible tests written in the API?
 - Do the CRUD actions work correctly, and update the databse?
 
-✨ **Bonus rounds** ✨
+✨ **Bonus Round** ✨
 
+- How would you implement a tag system for the todos? i.e. if each Todo could have multiple tags? How would this effect your database architecture?
 - How would you implement infinite scrolling or pagination in this app? Please write a comment
 - Do you have any ideas on how you would improve the app? Please write a comment
-- How would you implete deletions? Please write a comment or implement
+- How would you add the functionality to delete todos? Please write a comment or ideally, implement the feature
 
 ## Getting Started
 
-To get started, you just need to download this repo, and run the commands:
+To run the frontend app, you just need to fork this repo and run the commands:
+
+```
+cd frontend
+```
 
 ```
 npm install
@@ -47,8 +53,7 @@ npm run dev
 
 And you're done! 🎉
 
-My advice would be to familiarise yourself with what is in `models` and `services`, and probably take
-a look around at how we've implemented any mutations.
+Familiarise yourself with what is in `models` and `services`, and take a look around at how we've implemented any mutations for ideas about how to get started.
 
 ## Technologies
 

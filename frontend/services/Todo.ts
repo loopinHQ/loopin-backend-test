@@ -1,4 +1,4 @@
-import { exampleTodos, Todo, Todos } from "../models/Todo";
+import { exampleTodos, Todo } from "../models/Todo";
 
 /**
  * This is a fake service that returns a list of todos.
@@ -7,17 +7,17 @@ import { exampleTodos, Todo, Todos } from "../models/Todo";
  *
  * @returns {Todos}
  */
-export const getTodos = async (): Promise<Todos> => {
-  // TODO: Impement your own service to get Todos
+export const getTodos = async (): Promise<Todo[]> => {
+  // TODO: Implement your own service to get Todos
   // It might look something like this:
   // return fetch("/todos").then((r) => r.json());
 
   return exampleTodos();
 };
 
-export const updateTodo = async (todo: Todo): Promise<Todo> => {
+export const updateTodo = async (todo: Todo): Promise<void> => {
   // TODO: Implement a real update service
-  return todo;
+  return;
 };
 
 export const addTodo = async (todo: Partial<Todo>): Promise<void> => {

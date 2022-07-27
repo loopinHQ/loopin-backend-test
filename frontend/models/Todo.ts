@@ -4,8 +4,6 @@ export interface Todo {
   completed: boolean;
 }
 
-export type Todos = Todo[];
-
 export const exampleTodo: (todo?: Partial<Todo>) => Todo = (todo) => ({
   id: 1,
   title: "Learn TypeScript",
@@ -13,7 +11,7 @@ export const exampleTodo: (todo?: Partial<Todo>) => Todo = (todo) => ({
   ...todo,
 });
 
-export const exampleTodos: () => Todos = () => {
+export const exampleTodos: () => Todo[] = () => {
   return [
     exampleTodo(),
     exampleTodo({ id: 2, title: "Learn React", completed: false }),

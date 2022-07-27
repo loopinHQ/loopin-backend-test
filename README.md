@@ -14,17 +14,18 @@ The only thing is, we don't yet have an API or a database - that's where you com
 
 We want you to:
 
-- Fork this repo
-- Create a _new_ API repo in `/backend` using Node.js and TypeScript
+- Fork this repository
+- Create a _new_ API in the folder `/backend` using Node.js and TypeScript
 - Modify the `/frontend` so that it calls your API successfully
 - Add a database (we use PostGres/Prisma but use whatever you are comfortable with)
+- Use git - and when you've finished the project, send us a link to your repository so we can review
 
 What we've testing for:
 
 - Can we add a new todo?
-- Can we update a todo to completed?
+- Can we update a todo to "completed"?
 - Are there sensible tests written in the API?
-- Do the CRUD actions work correctly, and update the databse?
+- Do the CRUD actions work correctly, including updating the databse?
 
 ✨ **Bonus Round** ✨
 

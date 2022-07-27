@@ -1,9 +1,15 @@
 import type { NextPage } from "next";
 import Head from "next/head";
 import Image from "next/image";
+import useSWR from "swr";
 import TodoList from "../components/TodoList";
+import { Todos } from "../models/Todo";
+
+import { getTodos } from "../services/Todo";
 
 const Home: NextPage = () => {
+  const { data, error } = useSWR("/todos", getTodos);
+
   return (
     <div className="flex min-h-screen flex-col py-10 bg-slate-900">
       <Head>
@@ -19,7 +25,7 @@ const Home: NextPage = () => {
           layout="fixed"
           className="pb-10"
         />
-        <TodoList todos={[]} />
+        <TodoList todos={data} />
       </div>
     </div>
   );
